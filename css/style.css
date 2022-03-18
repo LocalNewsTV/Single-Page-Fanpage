@@ -1,0 +1,391 @@
+/* Import the fonts used to uniquely style the page */
+@font-face {
+    font-family: RodinProDB;
+    src: url(fonts/rodinprodb.otf);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    text-align: center;   
+}
+/* Highest level of the nav bar  */
+.banner-container {
+    background-color: #333;
+    border-bottom: 1px black solid;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Nier Automata Logo adjustment scaled to viewport */
+.banner img{
+    width: 75vw;
+}
+.banner {
+    display: flex; /* format all the children using flexbox */
+    flex-direction: row;
+    justify-content: space-between; /* center the items horizontally */
+    align-items: center;
+    padding-left: 1rem; /*Keeps logo from hitting edge */
+}
+
+/* define the base paragraph font unless otherwise stated */
+h2 {
+    color: black;
+    font-family: RodinProDB;
+}
+
+p {
+    color: black;
+    font-family: RodinProDB;
+    font-size: 0.8rem;
+}
+
+.logo {
+    display: block;
+    padding-top: 10px;
+}
+
+nav {
+    display: block;
+    
+}
+/* Nier automata loading screen video background */
+#background {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute; /* without, sliding backgrounds disappear */
+    background: black;
+}
+#background-video { 
+    width: 100%;
+    height: 100%;
+    background: url(../images/niervideo.m4v);
+    background-position: center;
+    position: fixed;  /* bg slides without this */
+    object-fit: fill; /* lets background fit screen instead of cropping out. */
+    left: 0;  
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+/* Parent container for the landing screen text, no background to display the static video background */
+#intro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* Section 1 Home */
+/* Text box containing our h1 intro to the website, minimalist for the sake of keeping the video visible  */
+/* Our intro to fanpage  */
+.landingscreen h1 {
+    font-size: 2rem; /* scales depending on default settings of device */
+}
+.landingscreen {
+    display: block;
+    position: absolute;
+    background: #414141;
+    opacity: 85%;
+    padding: 0 1rem 0 1rem;
+    border: 1px black solid;
+    border-radius: 25px;   
+    color: white;
+    font-size: 3rem;
+    max-width: 80vw; /* prevent container going edge-to-edge on smaller screens */ 
+}
+/* Section 2 Characters */
+/* Parent container for the characters section */
+section#characters {
+    display:block;
+    min-height: 100vh;   /* maintains the standard size for the pages set to min to allow growth between orientations*/ 
+    min-width: 100%;
+    background-image: url(../images/textScrawlSpawn.png);
+    background-position: center;
+    background-size: cover;
+    text-align: center;    
+}
+
+/* container holding the child boxes */
+.boxes {
+    margin: auto;
+    padding: 5%
+}
+.box {
+    border: 1px black solid;
+    background-color: #dcd8c0;
+    opacity: 95%;
+    padding: 1%;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+/* Section 3 Plot */
+/* Parent container for the Plot section of the page  */
+section#plotsummary {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/NierAutomataBGAsset.png);
+    text-align: center;
+    padding-top: 1%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.plot { /*child container*/
+    margin: 10vh 5% 5% 5%; /* scales relative to browser if not otherwise stated */
+    background: #dcd8c0;
+    border-radius: 10px;
+    padding: 1rem 1% 1% 1%;
+    border: 1px black solid;
+}
+/* Fourth section of the webpage  */
+section#emaillist {
+    display: flex;
+    min-height: 100vh; /*ensures blank background is proper size*/
+    background-position: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 20rem; /* Scales form down in size for mobile browsers */
+}
+
+
+form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.formvideo {
+    display: flex; 
+    width: 100%; 
+    height: 100%;
+    overflow: hidden;
+    /* Adds our blur over the form player */
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+form input{
+    border: 1px black transparent;
+    background-color: #414141;
+    opacity: 50%;
+    box-sizing: border-box;
+    font-family: RodinProDB;
+    color: lightgrey;
+    border: transparent; 
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+form h2  {
+    padding: 0 5px 0 5px;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: -1rem;
+}
+form p {
+    color: white;
+}
+.button-1 { /* formatting our newsletter button */
+    background-color: #414141;
+    border: transparent;
+    opacity: 75%;
+    color: white;
+    font-family: RodinProDB;
+    font-size: .7rem;
+}
+
+.nav {
+    border-bottom: 1px solid black;
+    text-align: right;
+    height: 70px;
+    line-height: 70px;
+}   
+
+header .nav {
+    opacity: 85%;
+}
+.menu {
+    margin: 0 30px 0 0;
+}
+
+.menu a {
+    clear: right;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin: 0 11px;
+    line-height: 70px;
+    font-family: RodinProDB;
+}
+.nav a:hover {  /*Makes the 9S Virus image easter egg.*/
+    background-color: white;
+    background: url(../images/9SLogicVirus.png);
+    background-size: cover; 
+    width: 100%;
+    transition: 2s;
+    opacity: 100%;
+}
+.drop-enabled {
+    content: '0C994'
+}
+
+span {
+    color: #FF2400;
+}
+/* our Hamburger (menu) helper */
+label {
+    margin: 0 15px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+    width: 26px;
+    float: right;
+}
+/* Hamburger menu on/off  */
+#toggle {
+    display: none;
+}
+/* Pseudo section 5 Disclaimer */
+/* Disclaimer at the bottom to help keep me from a lawsuit */
+footer {
+    margin-bottom: 0;
+    width: 100%;
+    background-color: #dcd8c0;
+    align-items: flex-end;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-top: 1px black solid;
+}
+/* Footer text decor to match */
+footer a {
+    text-decoration: none;
+    color: black;
+}
+/* Maintains that the settings will only affect mobile  */
+@media only screen and (max-width: 668px) {
+    body, html {
+        flex-direction: column;
+    }
+
+    label {
+        display: block;
+        cursor: pointer;
+    }
+    .banner img { /* adjusts banner for proper view */
+        width: 70vw;
+    }
+    .menu {
+        background: #707579;
+        opacity: 90%;
+        margin-right: 0;
+        text-align: center;
+        width: 65%;
+        display: none;
+    }
+
+    .menu a {
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+        margin: 0;
+        opacity: 100%;
+    }
+
+    #toggle:checked + .menu { 
+        margin-top: 4.5rem;
+        display: block;
+        position: absolute;
+        align-items: right;
+        right: 0;
+    }
+    /* Formatting individual backgrounds for the mobile nav bar  */
+    a.intro-link{background:#828a89;}
+    a.char{background:#7a8180;}
+    a.plotstuff {background: #717978;}
+    a.email-list{background: #697170;}
+    span {color: white;}
+}
+
+/* min-width set to 768 to avoid affecting the landscape mode on mobile */
+/* converting to mobile tablet view  */
+@media only screen and (min-width: 768px) {
+    /* Scales banner image to not explode on the upper sizing  */
+    .banner img {
+        width: 40vw;
+    }
+    /* Prevents the little hamburger menu image on click for larger viewports */
+    .nav a:hover {
+        background: none;   
+    }
+    #plotsummary { /* closes a gap in mobile view between characters and plot */ 
+        margin-top: -1.5rem;
+    }
+}
+
+/* Adjusts to resolutions higher than an ipad in landscape */
+@media only screen and (min-width: 1025px) {
+    /* contains the nav and nier logo */
+html, body {
+    flex-direction: row;
+}
+.boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.box {
+    margin: 3rem;
+    width: 33%;
+}
+.plot { /* optimizes the positioning of the plot box to reflect how I want to block the background.*/
+    margin-top: 35vh;
+}
+.form-container {
+    width: 35%
+}
+.banner {
+    display: flex; /* format all the children using flexbox */
+    flex-direction: row;
+    align-items: center; /* vertical alignment */
+    justify-content: space-between; /* center the items horizontally */
+    overflow: hidden;
+    text-align: center;
+}
+.banner img{
+    width: 100%;
+}
+.button-1 {
+    font-size: 1rem;
+}
+/* Modifies the scrollbar to display the emil face  */
+/* width */
+::-webkit-scrollbar {
+    width: 50px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: url(../images/IconEmil.png); 
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  body {overflow: overlay;} /*allows the content to spill into the area reserved for the scrollbar*/
+}
